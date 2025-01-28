@@ -19,5 +19,3 @@ def test_delete_user():
     with allure.step("Попытка удалить несуществующего пользователя"):
         response = httpx.delete(BASE_URL + "api/users/999")
         assert response.status_code == 204
-
-

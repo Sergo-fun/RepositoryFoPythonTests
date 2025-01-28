@@ -7,6 +7,7 @@ from core.contracts import UPDATE_USER_SCHEME
 BASE_URL = "https://reqres.in/"
 UPDATE_USER = "api/users/2"
 
+
 @allure.suite("PUT User API")
 @allure.title("Создание пользователя с корректными данными")
 @allure.severity(allure.severity_level.CRITICAL)
@@ -36,6 +37,3 @@ def test_create_user():
 
     with allure.step("Проверить, что поле 'job' обновлено"):
         assert response_json['job'] == body['job']
-
-
-

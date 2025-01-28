@@ -7,6 +7,7 @@ from core.contracts import UPDATE_USER_SCHEME
 BASE_URL = "https://reqres.in/"
 UPDATE_USER = "api/users/2"
 
+
 @allure.suite("PUT User API")
 @allure.title("Создание пользователя с корректными данными")
 @allure.severity(allure.severity_level.CRITICAL)

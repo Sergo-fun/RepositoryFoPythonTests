@@ -12,6 +12,7 @@ NOT_FOUND_USER = "api/users/23"
 LIST_RESOURCES = "api/unknown"
 SINGLE_RESOURCE = "api/unknown/2"
 NOT_FOUND_RESOURCE = "api/unknown/23"
+DELAYED_REQUEST = "api/users?page=2"
 
 
 @allure.suite('Проверка запроса данных пользователей')
@@ -101,3 +102,12 @@ def test_user_not_found_resources():
         response = httpx.get(BASE_URL + NOT_FOUND_RESOURCE)
     with allure.step('Проверяем код ответа'):
         assert response.status_code == 404
+
+
+@allure.suite('Проверка запроса времени запроса')
+@allure.title('Проверяем получение данных: какое время затрачивается')
+def test_delayed_user_list():
+    with allure.step(f'Делаем запрос по адресу: {BASE_URL + DELAYED_REQUEST}'):
+        response = httpx.get(BASE_URL + DELAYED_REQUEST, timeout=4)
+    with allure.step('Проверяем код ответа'):
+        assert response.status_code == 200
