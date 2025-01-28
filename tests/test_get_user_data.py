@@ -94,9 +94,8 @@ def test_single_colors():
         assert data['color'] == "#C74375"
 
 
-('Получение несуществующего ресурса')
-
-
+@allure.suite('Проверка запроса данных конкретного ресурса')
+@allure.title('Проверяем получение данных несуществующего ресурса')
 def test_user_not_found_resources():
     with allure.step(f'Делаем запрос по адресу: {BASE_URL + NOT_FOUND_RESOURCE}'):
         response = httpx.get(BASE_URL + NOT_FOUND_RESOURCE)
