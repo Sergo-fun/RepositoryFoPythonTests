@@ -77,3 +77,4 @@ def test_create_user_without_job():
         validate(response_json, CREATE_USER_SCHEME)
         assert response_json['name'] == body['name']
         assert creation_date[0:14] == current_date[0:14]
+

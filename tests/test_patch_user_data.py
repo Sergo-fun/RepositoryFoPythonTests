@@ -16,7 +16,7 @@ def test_create_user():
         "job": "leader"
     }
     with allure.step("Отправить PUT-запрос для обновления данных пользователя"):
-        response = httpx.put(BASE_URL + UPDATE_USER, json=body)
+        response = httpx.patch(BASE_URL + UPDATE_USER, json=body)
 
     with allure.step("Проверить статус-код ответа"):
         assert response.status_code == 200
@@ -30,12 +30,3 @@ def test_create_user():
         assert response_json['name'] == body['name']
         assert response_json['job'] == body['job']
         assert updation_date[0:14] == current_date[0:14]
-
-    with allure.step("Проверить, что поле 'name' обновлено"):
-        assert response_json['name'] == body['name']
-
-    with allure.step("Проверить, что поле 'job' обновлено"):
-        assert response_json['job'] == body['job']
-
-
-
