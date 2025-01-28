@@ -42,3 +42,27 @@ UPDATE_USER_SCHEME = {
     },
     "required": ["name", "job"]
 }
+
+REGISTERED_USER_SCHEME = {
+    "type": "object",
+    "properties": {
+        "id": {"type": "number"},
+        "token": {"type": "string"},
+    },
+    "required": ["id", "token"]
+}
+
+UNSUCCESS_REGISTER_SCHEME = {
+    "type": "object",
+    "properties": {
+        "error": {"type": "string"},
+    }
+}
+
+LOGIN_USER_SCHEME = {
+    "type": "object",
+    "properties": {
+        "token": {"type": "string"},
+    },
+    "required": ["token"]
+}

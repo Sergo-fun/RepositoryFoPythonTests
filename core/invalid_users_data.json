@@ -1,0 +1,6 @@
+[
+    {"email": "missingpassword@example.com"},
+    {"password": "missingemail@example.com"},
+    {"email": "", "password": "1234"},
+    {"email": "invalidemail.com", "password": "short"}
+]
